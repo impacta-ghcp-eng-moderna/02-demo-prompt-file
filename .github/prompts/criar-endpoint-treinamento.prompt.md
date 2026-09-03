@@ -1,7 +1,13 @@
 ---
+name: endpoint-treinamento
 description: Criar ou ajustar um único endpoint da API de treinamentos a partir de um contrato explícito
 argument-hint: Informe operação, rota, contrato e validação esperada
 agent: agent
+model: Claude Opus 4.8 (fast mode) (Preview) (copilot)
+tools:
+  - search
+  - edit
+  - execute
 ---
 
 # Criar Endpoint da API de Treinamentos
@@ -17,17 +23,8 @@ Implemente somente um endpoint por invocação, usando as entradas fornecidas ab
 
 ## Regras obrigatórias
 
-- Leia `docs/specs/training-catalog-vertical-slice.md` antes de alterar qualquer comportamento do catálogo.
-- Preserve `.github/copilot-instructions.md` e todas as repository instructions aplicáveis.
+- Leia a [especificação do catálogo](../../docs/specs/training-catalog-vertical-slice.md) antes de alterar qualquer comportamento.
 - Inspecione primeiro o endpoint de criação de treinamentos existente e as abstrações diretamente relacionadas. Use-o como referência de organização, validação, armazenamento, respostas HTTP e testes.
-- Verifique as convenções já validadas no projeto, incluindo:
-  - .NET 10 e C#;
-  - organização atual dos projetos;
-  - abstrações existentes para armazenamento;
-  - dependências já utilizadas;
-  - formato das respostas HTTP;
-  - convenções dos testes;
-  - comandos de validação documentados.
 - Não invente regras de negócio, status HTTP, mensagens, formatos, dependências ou critérios de validação que não estejam no contrato informado ou na especificação aplicável.
 - Se o contrato conflitar com a especificação, pare e explique o conflito antes de editar.
 - Se uma decisão aberta ou uma informação necessária estiver ausente, peça esclarecimento antes de editar.
